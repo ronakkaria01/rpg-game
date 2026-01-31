@@ -6,12 +6,12 @@
 * **Genre:** First-Person RPG, Survival, Adventure
 * **Target Audience:** Players who enjoy crafting, exploration, and short, narrative-driven experiences.
 * **Game Goal:** As a castaway, you must survive the wilderness of a remote island, repair a damaged boat, and navigate a treacherous sea to reach the safety of a distant village.
-*   **Core Gameplay Loop:**
-    1.  **Explore & Scavenge:** Search the island for resources.
-    2.  **Craft & Prepare:** Craft weapons and repair materials for the journey.
-    3.  **Navigate & Survive:** Sail the boat, facing environmental and creature-based challenges.
-    4.  **Confront or Evade:** Make a critical choice when facing the sea's guardian.
-    5.  **Reach Safety:** Arrive at the village to win.
+* **Core Gameplay Loop:**
+  1. **Explore & Scavenge:** Search the island for resources.
+  2. **Craft & Prepare:** Craft weapons and repair materials for the journey.
+  3. **Navigate & Survive:** Sail the boat, facing environmental and creature-based challenges.
+  4. **Confront or Evade:** Make a critical choice when facing the sea's guardian.
+  5. **Reach Safety:** Arrive at the village to win.
 
 ---
 
@@ -37,29 +37,23 @@ The player finds a few useful items in the washed-up, broken boat:
 
 At the start of the game, the player chooses **two** skills to specialize in. This choice will significantly impact their gameplay strategy.
 
-*   **Foraging:** You have a keen eye for resources. It is much easier to find the materials you need, and you gather them in greater quantities.
-
-*   **Crafting:** You are a natural builder. You can repair the boat and craft items using fewer resources.
-
-*   **Marksmanship:** You are a proficient marksman. Your aim with the bow and harpoon is steady, causing more damage and having a higher chance of hitting critical weak points. Your precision with ranged weapons also translates to crafting more complex structures, unlocking special boat upgrades.
-
-*   **Sailing:** You have a feel for the water. You can sail the boat faster and with greater maneuverability, making it easier to evade danger.
-
-*   **Swimming:** You are a strong swimmer. Stamina drains much slower while swimming, giving you a fighting chance if the boat is destroyed.
+* **Foraging:** You have a keen eye for resources. It is much easier to find the materials you need, and you gather them in greater quantities.
+* **Crafting:** You are a natural builder. You can repair the boat and craft items using fewer resources.
+* **Marksmanship:** You are a proficient marksman. Your aim with the bow and harpoon is steady, causing more damage and having a higher chance of hitting critical weak points. Your precision with ranged weapons also translates to crafting more complex structures, unlocking special boat upgrades.
+* **Sailing:** You have a feel for the water. You can sail the boat faster and with greater maneuverability, making it easier to evade danger.
+* **Swimming:** You are a strong swimmer. Stamina drains much slower while swimming, giving you a fighting chance if the boat is destroyed.
 
 **Skill Synergy Note:** If the player chooses both **Foraging** and **Crafting**, they become a master of preparation. To maintain game balance, this choice makes the journey itself harder: the sea's current is stronger, and the Kraken is more aggressive.
 
 ### Traits
 After choosing skills, the player must select **one** of the following inherent traits. This choice provides a permanent, passive bonus throughout the game.
 
-*   **Perception:** You are exceptionally aware of your surroundings.
-    *   **Gameplay Effect:** Resource nodes are highlighted from a greater distance, making them easier to spot. When facing the Kraken, its weak points (the Eyes) are more clearly visible and you might get a brief on-screen warning just before it attacks.
-
-*   **Strength:** You possess raw physical power.
-    *   **Gameplay Effect:** Gathering resources with the Axe is faster. You have a significantly higher chance of breaking free from the Kraken's "Tentacle Grab" attack without a skill check.
-
-*   **Dexterity:** You are nimble and have excellent hand-eye coordination.
-    *   **Gameplay Effect:** Crafting times are reduced. You can draw your bow and aim your harpoon faster, increasing your potential rate of fire. When paddling, you can make sharper, quicker turns.
+* **Perception:** You are exceptionally aware of your surroundings.
+  * **Gameplay Effect:** Resource nodes are highlighted from a greater distance, making them easier to spot. When facing the Kraken, its weak points (the Eyes) are more clearly visible and you might get a brief on-screen warning just before it attacks.
+* **Strength:** You possess raw physical power.
+  * **Gameplay Effect:** Gathering resources with the Axe is faster. You have a significantly higher chance of breaking free from the Kraken's "Tentacle Grab" attack without a skill check.
+* **Dexterity:** You are nimble and have excellent hand-eye coordination.
+  * **Gameplay Effect:** Crafting times are reduced. You can draw your bow and aim your harpoon faster, increasing your potential rate of fire. When paddling, you can make sharper, quicker turns.
 
 ### Inventory
 For simplicity, there is no player-based inventory limit. All gathered resources are stored in the boat, which can hold an unlimited amount of items for the scope of this game.
@@ -131,12 +125,12 @@ Once the boat is repaired, the player can push it into the water. The paddle is 
 
 *(Base material costs are shown; the 'Crafting' skill reduces these.)*
 
-*   **Boat Patch Kit:** (3x Sap + 2x Tough Bark) - Repairs the hole in the boat.
-*   **Harpoon:** (1x Sturdy Branch + 1x Sharpened Stone + 3x Plant Fibers) - A heavy throwable weapon. Can be retrieved.
-*   **Bow:** (1x Sturdy Branch + 3x Plant Fibers) - A ranged weapon.
-*   **Arrows (x5):** (5x Small Branch + 5x Sharpened Stone) - Ammunition for the Bow.
-*   **Boat Reinforcement:** (3x Sturdy Branch + 2x Plant Fibers) - Increases the boat's max HP by 50. *(Requires Marksmanship skill to craft.)*
-*   **Sail:** (2x Tough Bark + 4x Plant Fibers) - A makeshift sail that increases boat speed. *(Requires Marksmanship skill to craft and Sailing skill to use effectively.)*
+* **Boat Patch Kit:** (3x Sap + 2x Tough Bark) - Repairs the hole in the boat.
+* **Harpoon:** (1x Sturdy Branch + 1x Sharpened Stone + 3x Plant Fibers) - A heavy throwable weapon. Can be retrieved.
+* **Bow:** (1x Sturdy Branch + 3x Plant Fibers) - A ranged weapon.
+* **Arrows (x5):** (5x Small Branch + 5x Sharpened Stone) - Ammunition for the Bow.
+* **Boat Reinforcement:** (3x Sturdy Branch + 2x Plant Fibers) - Increases the boat's max HP by 50. *(Requires Marksmanship skill to craft.)*
+* **Sail:** (2x Tough Bark + 4x Plant Fibers) - A makeshift sail that increases boat speed. *(Requires Marksmanship skill to craft and Sailing skill to use effectively.)*
 
 ### The Boat
 
