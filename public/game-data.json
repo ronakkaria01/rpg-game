@@ -1,0 +1,787 @@
+{
+  "version": "1.0.0",
+  "title": "The Castaway's Gambit",
+  "description": "A survival RPG where you must escape a deserted island and face the Kraken.",
+  "startSceneId": "charCreation",
+
+  "skills": {
+    "foraging": {
+      "id": "foraging",
+      "name": "Foraging",
+      "description": "You have a keen eye for resources. Gather materials in greater quantities (+50% yield).",
+      "category": "survival",
+      "traits": ["perception", "resourcefulness"]
+    },
+    "crafting": {
+      "id": "crafting",
+      "name": "Crafting",
+      "description": "You are a natural builder. Craft items using fewer resources (-25% cost).",
+      "category": "crafting",
+      "traits": ["dexterity", "ingenuity"]
+    },
+    "marksmanship": {
+      "id": "marksmanship",
+      "name": "Marksmanship",
+      "description": "Proficient with ranged weapons. Deal +50% damage and unlock special boat upgrades.",
+      "category": "combat",
+      "traits": ["aim", "strength"]
+    },
+    "sailing": {
+      "id": "sailing",
+      "name": "Sailing",
+      "description": "You have a feel for the water. Easier to evade danger at sea.",
+      "category": "survival",
+      "traits": ["navigation", "balance"]
+    },
+    "swimming": {
+      "id": "swimming",
+      "name": "Swimming",
+      "description": "Strong swimmer. Stamina drains 50% slower while in water.",
+      "category": "survival",
+      "traits": ["endurance", "strength"]
+    }
+  },
+
+  "traits": {},
+
+  "items": {
+    "sturdyBranch": {
+      "id": "sturdyBranch",
+      "name": "Sturdy Branch",
+      "description": "From chopping trees. Used for crafting and boat reinforcement.",
+      "type": "resource"
+    },
+    "smallBranch": {
+      "id": "smallBranch",
+      "name": "Small Branch",
+      "description": "From bushes. Used for making arrows.",
+      "type": "resource"
+    },
+    "sap": {
+      "id": "sap",
+      "name": "Sap",
+      "description": "Harvested from trees. A key binding agent.",
+      "type": "resource"
+    },
+    "toughBark": {
+      "id": "toughBark",
+      "name": "Tough Bark",
+      "description": "From trees. A durable, leather-like material.",
+      "type": "resource"
+    },
+    "sharpenedStone": {
+      "id": "sharpenedStone",
+      "name": "Sharpened Stone",
+      "description": "Found on the beach. Used for arrowheads and harpoon tips.",
+      "type": "resource"
+    },
+    "plantFiber": {
+      "id": "plantFiber",
+      "name": "Plant Fibers",
+      "description": "From leafy plants. Can be woven into strong cordage.",
+      "type": "resource"
+    },
+    "boatPatchKit": {
+      "id": "boatPatchKit",
+      "name": "Boat Patch Kit",
+      "description": "Repairs the hole in the boat.",
+      "type": "tool"
+    },
+    "harpoon": {
+      "id": "harpoon",
+      "name": "Harpoon",
+      "description": "A heavy throwable weapon. Can damage the Kraken.",
+      "type": "weapon"
+    },
+    "bow": {
+      "id": "bow",
+      "name": "Bow",
+      "description": "A ranged weapon. Requires arrows.",
+      "type": "weapon"
+    },
+    "arrows": {
+      "id": "arrows",
+      "name": "Arrows",
+      "description": "Ammunition for the bow.",
+      "type": "weapon"
+    },
+    "boatReinforcement": {
+      "id": "boatReinforcement",
+      "name": "Boat Reinforcement",
+      "description": "Increases boat's max HP. Requires Marksmanship.",
+      "type": "upgrade"
+    },
+    "sail": {
+      "id": "sail",
+      "name": "Sail",
+      "description": "Increases boat speed. Requires Marksmanship to craft, Sailing to use effectively.",
+      "type": "upgrade"
+    }
+  },
+
+  "recipes": {
+    "boatPatchKit": {
+      "id": "boatPatchKit",
+      "name": "Boat Patch Kit",
+      "description": "Repair your boat to make it seaworthy.",
+      "resultItemId": "boatPatchKit",
+      "resultQuantity": 1,
+      "ingredients": [
+        { "itemId": "sap", "quantity": 3 },
+        { "itemId": "toughBark", "quantity": 2 }
+      ],
+      "craftTime": 5,
+      "skillModifier": {
+        "skillId": "crafting",
+        "costMultiplier": 0.75
+      }
+    },
+    "harpoon": {
+      "id": "harpoon",
+      "name": "Harpoon",
+      "description": "Craft a deadly harpoon for fighting the Kraken.",
+      "resultItemId": "harpoon",
+      "resultQuantity": 1,
+      "ingredients": [
+        { "itemId": "sturdyBranch", "quantity": 1 },
+        { "itemId": "sharpenedStone", "quantity": 1 },
+        { "itemId": "plantFiber", "quantity": 3 }
+      ],
+      "craftTime": 5,
+      "skillModifier": {
+        "skillId": "crafting",
+        "costMultiplier": 0.75
+      }
+    },
+    "bow": {
+      "id": "bow",
+      "name": "Bow",
+      "description": "A ranged weapon for attacking from a distance.",
+      "resultItemId": "bow",
+      "resultQuantity": 1,
+      "ingredients": [
+        { "itemId": "sturdyBranch", "quantity": 1 },
+        { "itemId": "plantFiber", "quantity": 3 }
+      ],
+      "craftTime": 4,
+      "skillModifier": {
+        "skillId": "crafting",
+        "costMultiplier": 0.75
+      }
+    },
+    "arrows": {
+      "id": "arrows",
+      "name": "Arrows (x5)",
+      "description": "Ammunition for the bow.",
+      "resultItemId": "arrows",
+      "resultQuantity": 5,
+      "ingredients": [
+        { "itemId": "smallBranch", "quantity": 5 },
+        { "itemId": "sharpenedStone", "quantity": 5 }
+      ],
+      "craftTime": 3,
+      "skillModifier": {
+        "skillId": "crafting",
+        "costMultiplier": 0.75
+      }
+    },
+    "boatReinforcement": {
+      "id": "boatReinforcement",
+      "name": "Boat Reinforcement",
+      "description": "Reinforce your boat. Requires Marksmanship skill.",
+      "resultItemId": "boatReinforcement",
+      "resultQuantity": 1,
+      "ingredients": [
+        { "itemId": "sturdyBranch", "quantity": 3 },
+        { "itemId": "plantFiber", "quantity": 2 }
+      ],
+      "craftTime": 6,
+      "requiresSkill": "marksmanship",
+      "skillModifier": {
+        "skillId": "crafting",
+        "costMultiplier": 0.75
+      }
+    },
+    "sail": {
+      "id": "sail",
+      "name": "Sail",
+      "description": "A makeshift sail. Requires Marksmanship skill.",
+      "resultItemId": "sail",
+      "resultQuantity": 1,
+      "ingredients": [
+        { "itemId": "toughBark", "quantity": 2 },
+        { "itemId": "plantFiber", "quantity": 4 }
+      ],
+      "craftTime": 7,
+      "requiresSkill": "marksmanship",
+      "skillModifier": {
+        "skillId": "crafting",
+        "costMultiplier": 0.75
+      }
+    }
+  },
+
+  "enemies": {
+    "kraken": {
+      "id": "kraken",
+      "name": "The Kraken",
+      "description": "A massive, territorial cephalopod with glowing eyes. Its only weak points are its two large eyes.",
+      "maxHp": 100,
+      "weakPoints": [
+        { "id": "leftEye", "name": "Left Eye", "hp": 50 },
+        { "id": "rightEye", "name": "Right Eye", "hp": 50 }
+      ],
+      "attacks": [
+        {
+          "id": "tentacleSlap",
+          "name": "Tentacle Slap",
+          "damage": 15,
+          "description": "A sweeping attack targeting your boat!"
+        },
+        {
+          "id": "tentacleGrab",
+          "name": "Tentacle Grab",
+          "damage": 10,
+          "description": "The Kraken tries to grab you off the boat!"
+        },
+        {
+          "id": "whirlpool",
+          "name": "Whirlpool",
+          "damage": 5,
+          "description": "A vortex pulls you closer, preventing escape!"
+        }
+      ]
+    }
+  },
+
+  "scenes": {
+    "charCreation": {
+      "id": "charCreation",
+      "type": "characterCreation",
+      "title": "The Awakening",
+      "content": [
+        {
+          "type": "text",
+          "content": "You awaken on a sandy shore with a throbbing headache. Memories of a storm flash through your mind. Your ship... it's gone. All you know is the urgent need to survive."
+        },
+        {
+          "type": "text",
+          "content": "Before the storm, what skills did you possess? Choose 3 skills - each skill provides unique traits that will help you survive."
+        }
+      ],
+      "skillSelectionCount": 3,
+      "availableSkills": ["foraging", "crafting", "marksmanship", "sailing", "swimming"],
+      "traitSelectionCount": 0,
+      "availableTraits": [],
+      "nextSceneId": "beachAwakening"
+    },
+
+    "beachAwakening": {
+      "id": "beachAwakening",
+      "type": "choice",
+      "title": "The Beach",
+      "content": [
+        {
+          "type": "text",
+          "content": "You find yourself on a beach. Nearby is your broken boat - a small skiff with a gaping hole in its hull. Inside, you find a worn axe and a paddle. The beach is littered with driftwood and sharpened stones."
+        },
+        {
+          "type": "text",
+          "content": "A faded note in a bottle nearby reads: 'Beware the great beast in the deep. You'll need a sharp point and a steady hand.'"
+        },
+        {
+          "type": "text",
+          "content": "You set up a small camp here by the boat."
+        },
+        {
+          "type": "stats",
+          "showHp": true,
+          "showStamina": true,
+          "showInventory": false
+        }
+      ],
+      "choices": [
+        {
+          "id": "exploreForest",
+          "text": "Explore the forest",
+          "description": "Search for resources to repair your boat and prepare for the journey.",
+          "consequences": [
+            { "type": "navigate", "sceneId": "forestGathering" }
+          ]
+        },
+        {
+          "id": "gatherBeach",
+          "text": "Gather stones on the beach",
+          "description": "Collect sharpened stones from the beach.",
+          "consequences": [
+            { "type": "navigate", "sceneId": "beachGathering" }
+          ]
+        },
+        {
+          "id": "startCrafting",
+          "text": "Craft items",
+          "description": "Use your gathered resources to craft tools and weapons.",
+          "consequences": [
+            { "type": "navigate", "sceneId": "crafting" }
+          ]
+        }
+      ]
+    },
+
+    "beachGathering": {
+      "id": "beachGathering",
+      "type": "gathering",
+      "title": "Gathering Stones",
+      "content": [
+        {
+          "type": "text",
+          "content": "The beach is scattered with sharpened stones, perfect for crafting."
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "sharpenedStone",
+          "baseQuantity": 2,
+          "gatherTime": 2
+        }
+      ],
+      "exitChoice": {
+        "id": "exitBeach",
+        "text": "Return to camp",
+        "consequences": [
+          { "type": "navigate", "sceneId": "camp" }
+        ]
+      }
+    },
+
+    "forestGathering": {
+      "id": "forestGathering",
+      "type": "gathering",
+      "title": "The Forest",
+      "content": [
+        {
+          "type": "text",
+          "content": "A dense woodland stretches before you. Trees tower overhead, and bushes rustle in the breeze. This is where you'll find the materials you need."
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "sturdyBranch",
+          "baseQuantity": 1,
+          "gatherTime": 4
+        },
+        {
+          "itemId": "smallBranch",
+          "baseQuantity": 2,
+          "gatherTime": 2
+        },
+        {
+          "itemId": "sap",
+          "baseQuantity": 1,
+          "gatherTime": 3
+        },
+        {
+          "itemId": "toughBark",
+          "baseQuantity": 1,
+          "gatherTime": 3
+        },
+        {
+          "itemId": "plantFiber",
+          "baseQuantity": 2,
+          "gatherTime": 2
+        }
+      ],
+      "exitChoice": {
+        "id": "exitForest",
+        "text": "Return to camp",
+        "consequences": [
+          { "type": "navigate", "sceneId": "camp" }
+        ]
+      }
+    },
+
+    "camp": {
+      "id": "camp",
+      "type": "choice",
+      "title": "Your Camp",
+      "content": [
+        {
+          "type": "text",
+          "content": "You stand at your camp on the beach, next to your broken boat. The beach is littered with stones, the forest looms inland, and the vast ocean stretches before you. In the distance, you can barely make out the outline of a village on the mainland."
+        },
+        {
+          "type": "inventory"
+        }
+      ],
+      "choices": [
+        {
+          "id": "craftItems",
+          "text": "Craft items",
+          "description": "Use your gathered resources to craft tools and weapons.",
+          "consequences": [
+            { "type": "navigate", "sceneId": "crafting" }
+          ]
+        },
+        {
+          "id": "gatherForest",
+          "text": "Gather resources in the forest",
+          "description": "Head to the forest to gather wood, sap, and fibers.",
+          "consequences": [
+            { "type": "navigate", "sceneId": "forestGathering" }
+          ]
+        },
+        {
+          "id": "gatherBeach",
+          "text": "Gather stones on the beach",
+          "description": "Search the beach for sharpened stones.",
+          "consequences": [
+            { "type": "navigate", "sceneId": "beachGathering" }
+          ]
+        },
+        {
+          "id": "repairBoat",
+          "text": "Repair the boat",
+          "description": "Use the patch kit to repair your boat and set sail.",
+          "conditions": [
+            { "type": "hasItem", "itemId": "boatPatchKit", "quantity": 1 }
+          ],
+          "consequences": [
+            { "type": "removeItem", "itemId": "boatPatchKit", "quantity": 1 },
+            { "type": "setBoatRepaired" },
+            { "type": "navigate", "sceneId": "boatRepaired" }
+          ]
+        },
+        {
+          "id": "reinforceBoat",
+          "text": "Reinforce the boat",
+          "description": "Add reinforcements to increase the boat's durability.",
+          "conditions": [
+            { "type": "hasItem", "itemId": "boatReinforcement", "quantity": 1 },
+            { "type": "boatRepaired" }
+          ],
+          "consequences": [
+            { "type": "removeItem", "itemId": "boatReinforcement", "quantity": 1 },
+            { "type": "navigate", "sceneId": "camp" }
+          ]
+        },
+        {
+          "id": "setSailFromCamp",
+          "text": "Set sail for the village",
+          "description": "Your boat is ready. Time to face the open sea.",
+          "conditions": [
+            { "type": "boatRepaired" }
+          ],
+          "consequences": [
+            { "type": "navigate", "sceneId": "boatRepaired" }
+          ]
+        }
+      ]
+    },
+
+    "crafting": {
+      "id": "crafting",
+      "type": "crafting",
+      "title": "Crafting",
+      "content": [
+        {
+          "type": "text",
+          "content": "You spread out your materials. What will you craft?"
+        }
+      ],
+      "availableRecipes": ["boatPatchKit", "harpoon", "bow", "arrows", "boatReinforcement", "sail"],
+      "exitChoice": {
+        "id": "exitCrafting",
+        "text": "Return to camp",
+        "consequences": [
+          { "type": "navigate", "sceneId": "camp" }
+        ]
+      }
+    },
+
+    "boatRepaired": {
+      "id": "boatRepaired",
+      "type": "choice",
+      "title": "Ready to Sail",
+      "content": [
+        {
+          "type": "text",
+          "content": "Your boat is repaired! The patch holds strong. You can now push it into the water and sail toward the distant village. But the note's warning echoes in your mind: 'Beware the great beast in the deep.'"
+        },
+        {
+          "type": "text",
+          "content": "Are you prepared for what lies ahead?"
+        },
+        {
+          "type": "inventory"
+        }
+      ],
+      "choices": [
+        {
+          "id": "prepareMore",
+          "text": "Prepare more (gather & craft)",
+          "description": "You're not ready yet. Gather more resources and craft weapons.",
+          "consequences": [
+            { "type": "navigate", "sceneId": "camp" }
+          ]
+        },
+        {
+          "id": "setSail",
+          "text": "Set sail for the village",
+          "description": "Push off into the open sea and face whatever comes.",
+          "consequences": [
+            { "type": "navigate", "sceneId": "openSea" }
+          ]
+        }
+      ]
+    },
+
+    "openSea": {
+      "id": "openSea",
+      "type": "choice",
+      "title": "The Open Sea",
+      "content": [
+        {
+          "type": "text",
+          "content": "You push the boat into the water and begin paddling. The island slowly shrinks behind you. The water is calm at first, but as you reach deeper waters, the sea begins to churn."
+        },
+        {
+          "type": "text",
+          "content": "Massive tentacles rise from the depths. Two glowing eyes pierce through the dark water. The Kraken has found you!"
+        }
+      ],
+      "choices": [
+        {
+          "id": "faceKraken",
+          "text": "Stand and fight",
+          "description": "Face the beast head-on!",
+          "consequences": [
+            { "type": "navigate", "sceneId": "krakenFight" }
+          ]
+        }
+      ]
+    },
+
+    "krakenFight": {
+      "id": "krakenFight",
+      "type": "combat",
+      "title": "The Kraken",
+      "enemyId": "kraken",
+      "content": [
+        {
+          "type": "text",
+          "content": "The Kraken towers above you, its massive form blocking out the sky. Its two glowing eyes lock onto you. You must aim for those eyes - they're its only weak points!"
+        }
+      ],
+      "choices": [
+        {
+          "id": "throwHarpoon",
+          "text": "Throw harpoon at its eye",
+          "description": "Aim carefully and strike at a weak point! (Better with aim + strength)",
+          "conditions": [
+            { "type": "hasItem", "itemId": "harpoon", "quantity": 1 }
+          ],
+          "consequences": [
+            { "type": "removeItem", "itemId": "harpoon", "quantity": 1 },
+            { "type": "damageEnemy", "enemyId": "kraken", "damage": 40 },
+            { "type": "modifyStat", "stat": "hp", "amount": -15 }
+          ],
+          "traitChecks": [
+            {
+              "traitId": "aim",
+              "bonusConsequences": [
+                { "type": "damageEnemy", "enemyId": "kraken", "damage": 20 },
+                { "type": "modifyStat", "stat": "hp", "amount": 5 }
+              ]
+            },
+            {
+              "traitId": "strength",
+              "bonusConsequences": [
+                { "type": "damageEnemy", "enemyId": "kraken", "damage": 10 },
+                { "type": "modifyStat", "stat": "hp", "amount": 3 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "shootArrow",
+          "text": "Shoot arrow at its eye",
+          "description": "Fire an arrow at the glowing eye! (Better with aim + dexterity)",
+          "conditions": [
+            {
+              "type": "and",
+              "conditions": [
+                { "type": "hasItem", "itemId": "bow", "quantity": 1 },
+                { "type": "hasItem", "itemId": "arrows", "quantity": 1 }
+              ]
+            }
+          ],
+          "consequences": [
+            { "type": "removeItem", "itemId": "arrows", "quantity": 1 },
+            { "type": "damageEnemy", "enemyId": "kraken", "damage": 30 },
+            { "type": "modifyStat", "stat": "hp", "amount": -12 }
+          ],
+          "traitChecks": [
+            {
+              "traitId": "aim",
+              "bonusConsequences": [
+                { "type": "damageEnemy", "enemyId": "kraken", "damage": 18 },
+                { "type": "modifyStat", "stat": "hp", "amount": 4 }
+              ]
+            },
+            {
+              "traitId": "dexterity",
+              "bonusConsequences": [
+                { "type": "damageEnemy", "enemyId": "kraken", "damage": 12 },
+                { "type": "modifyStat", "stat": "hp", "amount": 3 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "evade",
+          "text": "Try to evade and escape",
+          "description": "Outmaneuver the Kraken! (Requires navigation + balance to escape)",
+          "consequences": [
+            { "type": "modifyStat", "stat": "stamina", "amount": -15 },
+            { "type": "modifyStat", "stat": "hp", "amount": -12 }
+          ],
+          "traitChecks": [
+            {
+              "traitId": "navigation",
+              "bonusConsequences": [
+                { "type": "modifyStat", "stat": "hp", "amount": 8 },
+                { "type": "modifyStat", "stat": "stamina", "amount": 5 }
+              ]
+            },
+            {
+              "traitId": "balance",
+              "bonusConsequences": [
+                { "type": "modifyStat", "stat": "hp", "amount": 7 },
+                { "type": "modifyStat", "stat": "stamina", "amount": 5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "escapeSuccessful",
+          "text": "Full evasion (Escape!)",
+          "description": "Use expert sailing to completely evade the Kraken!",
+          "conditions": [
+            {
+              "type": "and",
+              "conditions": [
+                { "type": "hasTrait", "traitId": "navigation" },
+                { "type": "hasTrait", "traitId": "balance" }
+              ]
+            }
+          ],
+          "consequences": [
+            { "type": "modifyStat", "stat": "stamina", "amount": -10 },
+            { "type": "navigate", "sceneId": "krakenEscape" }
+          ]
+        },
+        {
+          "id": "paddle",
+          "text": "Paddle away frantically",
+          "description": "Try to escape, but the Kraken is fast...",
+          "consequences": [
+            { "type": "modifyStat", "stat": "stamina", "amount": -15 },
+            { "type": "modifyStat", "stat": "hp", "amount": -10 }
+          ]
+        }
+      ],
+      "victorySceneId": "krakenVictory",
+      "defeatSceneId": "krakenDefeat"
+    },
+
+    "krakenEscape": {
+      "id": "krakenEscape",
+      "type": "choice",
+      "title": "Outmaneuvered",
+      "content": [
+        {
+          "type": "text",
+          "content": "Using your sailing skills, you expertly navigate around the Kraken's attacks. Your quick maneuvers and understanding of the currents allow you to slip past the beast's territory!"
+        },
+        {
+          "type": "text",
+          "content": "The Kraken, frustrated by your evasion, sinks back into the depths. You've escaped without a direct confrontation. The path to the village is clear."
+        }
+      ],
+      "choices": [
+        {
+          "id": "sailToVillage",
+          "text": "Sail to the village",
+          "consequences": [
+            { "type": "navigate", "sceneId": "victory" }
+          ]
+        }
+      ]
+    },
+
+    "krakenVictory": {
+      "id": "krakenVictory",
+      "type": "choice",
+      "title": "The Beast Retreats",
+      "content": [
+        {
+          "type": "text",
+          "content": "Your attacks find their marks! Both of the Kraken's glowing eyes are struck. The beast lets out a deafening roar and sinks back into the depths, wounded and blinded."
+        },
+        {
+          "type": "text",
+          "content": "The waters calm. The path to the village is clear."
+        }
+      ],
+      "choices": [
+        {
+          "id": "sailToVillage",
+          "text": "Sail to the village",
+          "consequences": [
+            { "type": "navigate", "sceneId": "victory" }
+          ]
+        }
+      ]
+    },
+
+    "krakenDefeat": {
+      "id": "krakenDefeat",
+      "type": "ending",
+      "title": "Defeated",
+      "endingType": "defeat",
+      "content": [
+        {
+          "type": "text",
+          "content": "The Kraken's massive tentacles crash down one final time. Your vision fades as you sink beneath the waves. The beast has claimed another victim."
+        },
+        {
+          "type": "text",
+          "content": "The sea keeps its secrets."
+        }
+      ],
+      "canRestart": true
+    },
+
+    "victory": {
+      "id": "victory",
+      "type": "ending",
+      "title": "The Arrival",
+      "endingType": "victory",
+      "content": [
+        {
+          "type": "text",
+          "content": "Exhausted but alive, you guide your boat toward the warm lights of the village. As you step onto the wooden pier, villagers rush to help you."
+        },
+        {
+          "type": "text",
+          "content": "You survived the island. You bested the sea. A new life awaits."
+        },
+        {
+          "type": "text",
+          "content": "THE END"
+        }
+      ],
+      "canRestart": true
+    }
+  }
+}
