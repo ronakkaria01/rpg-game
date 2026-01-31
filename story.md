@@ -49,8 +49,19 @@ At the start of the game, the player chooses **two** skills to specialize in. Th
 
 **Skill Synergy Note:** If the player chooses both **Foraging** and **Crafting**, they become a master of preparation. To maintain game balance, this choice makes the journey itself harder: the sea's current is stronger, and the Kraken is more aggressive.
 
-### Inventory
+### Traits
+After choosing skills, the player must select **one** of the following inherent traits. This choice provides a permanent, passive bonus throughout the game.
 
+*   **Perception:** You are exceptionally aware of your surroundings.
+    *   **Gameplay Effect:** Resource nodes are highlighted from a greater distance, making them easier to spot. When facing the Kraken, its weak points (the Eyes) are more clearly visible and you might get a brief on-screen warning just before it attacks.
+
+*   **Strength:** You possess raw physical power.
+    *   **Gameplay Effect:** Gathering resources with the Axe is faster. You have a significantly higher chance of breaking free from the Kraken's "Tentacle Grab" attack without a skill check.
+
+*   **Dexterity:** You are nimble and have excellent hand-eye coordination.
+    *   **Gameplay Effect:** Crafting times are reduced. You can draw your bow and aim your harpoon faster, increasing your potential rate of fire. When paddling, you can make sharper, quicker turns.
+
+### Inventory
 For simplicity, there is no player-based inventory limit. All gathered resources are stored in the boat, which can hold an unlimited amount of items for the scope of this game.
 
 ---
